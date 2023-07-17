@@ -3,7 +3,7 @@ import { StoreProvider } from "./StoreProvider";
 import { ThemeProviderContainer } from "./ThemeProviderContainer";
 
 export const StyledButton = styled(Button)<{ redNumber?: number }>(({ theme, redNumber, color }) => {
-    // console.log(theme);
+    console.log(theme);
     console.log(color);
 
     return {
