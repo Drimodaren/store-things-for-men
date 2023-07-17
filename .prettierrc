@@ -1,0 +1,25 @@
+{
+    "importOrder": [
+        "<THIRD_PARTY_MODULES>",
+        "^pages/(.*)$",
+        "^components/(.*)$",
+        "types",
+        "^constants/(.*)$",
+        "^hooks/(.*)$",
+        "^services/(.*)$",
+        "^store/(.*)$",
+        "store",
+        "^utils/(.*)$",
+        "^(?!\\.\\/styles)[./]",
+        "^\\.\\.?\\/styles",
+        "^[./]"
+    ],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true,
+    "tabWidth": 4,
+    "useTabs": false,
+    "printWidth": 120,
+    "arrowParens": "avoid",
+    "trailingComma": "none",
+    "endOfLine": "auto"
+}
