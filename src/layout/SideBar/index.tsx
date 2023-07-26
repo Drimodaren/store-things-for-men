@@ -1,18 +1,17 @@
-import { Divider, IconButton } from "@mui/material";
+import { Divider, IconButton, Theme, useTheme } from "@mui/material";
 import { DrawerForMen, Search, SearchIconWrapper, StyledInputBase } from "./sideBarStyle";
 import SearchIcon from "@mui/icons-material/Search";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { toggleSideBarAC } from "../../store/sideBar/slice";
 import { useAppSelector } from "../../hooks/useAppSelector";
-import { useTheme } from "@emotion/react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 export const LeftSideBar = () => {
     const dispatch = useAppDispatch();
     const openSideBar = useAppSelector(state => state.sideBar);
-    //const theme = useTheme();
-    const matches = useMediaQuery("(min-width:600px)");
+    const theme: Theme = useTheme();
+    const matches = useMediaQuery(theme.breakpoints.up("sm"));
 
     const toggle = () => {
         dispatch(toggleSideBarAC());
