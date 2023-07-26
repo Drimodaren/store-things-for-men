@@ -5,17 +5,21 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { toggleSideBarAC } from "../../store/sideBar/slice";
 import { useAppSelector } from "../../hooks/useAppSelector";
+import { useTheme } from "@emotion/react";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export const LeftSideBar = () => {
     const dispatch = useAppDispatch();
     const openSideBar = useAppSelector(state => state.sideBar);
+    //const theme = useTheme();
+    const matches = useMediaQuery("(min-width:600px)");
 
     const toggle = () => {
         dispatch(toggleSideBarAC());
     };
 
     return (
-        <DrawerForMen open={openSideBar}>
+        <DrawerForMen anchor={matches ? "left" : "bottom"} open={openSideBar}>
             <div>
                 <IconButton onClick={toggle}>
                     <ChevronLeftIcon />
