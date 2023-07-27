@@ -1,26 +1,27 @@
-import { FormControlLabel, FormGroup, IconButton, Badge } from "@mui/material";
+import { FormGroup, IconButton, Badge } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { AppBarForMen, PartUtils, ThemeSwitch, ToolbarForMen } from "./headerStyle";
-import { useState } from "react";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { toggleSideBarAC } from "../../store/sideBar/slice";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import { toggleThemeAC } from "../../store/changeTheme/themeSlice";
+import { useAppSelector } from "../../hooks/useAppSelector";
 
 export const Header = () => {
     const dispatch = useAppDispatch();
+    const changeColor = useAppSelector(state => state.changeTheme);
+    console.log(changeColor.mode);
 
     const toggle = () => {
         dispatch(toggleSideBarAC());
     };
 
-    const [changeColor, setColor] = useState(false);
-
     const handlechangeColor = () => {
-        setColor(!changeColor);
+        dispatch(toggleThemeAC());
     };
     return (
         <AppBarForMen>
-            <ToolbarForMen open={changeColor}>
+            <ToolbarForMen>
                 <IconButton onClick={toggle}>
                     <MenuIcon />
                 </IconButton>

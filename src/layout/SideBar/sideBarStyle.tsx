@@ -41,11 +41,16 @@ export const StyledInputBase = styled(InputBase)(({ theme }) => ({
     }
 }));
 
-export const DrawerForMen = styled(Drawer)({
+export const DrawerForMen = styled(Drawer)(({ theme }) => ({
     width: 240,
     flexShrink: 0,
     "& .MuiDrawer-paper": {
         width: 240,
         boxSizing: "border-box"
+    },
+    [theme.breakpoints.down("sm")]: {
+        "& .MuiDrawer-paper": {
+            width: "100%"
+        }
     }
-});
+}));
