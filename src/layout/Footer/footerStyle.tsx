@@ -12,7 +12,8 @@ import { AppBar, Toolbar, styled } from "@mui/material";
 // }));
 
 export const ContainerFooter = styled(AppBar)({
-    position: "sticky"
+    position: "sticky",
+    gridArea: "footer"
 });
 export const ToolbarFooter = styled(Toolbar)({
     display: "flex",

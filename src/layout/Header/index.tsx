@@ -1,20 +1,24 @@
 import { FormGroup, IconButton, Badge } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import { AppBarForMen, PartUtils, ThemeSwitch, ToolbarForMen } from "./headerStyle";
+import AccountCircle from "@mui/icons-material/AccountCircle";
+import {
+    AppBarForMen,
+    PartUtils,
+    ThemeSwitch,
+    ToolbarForMen,
+    Search,
+    SearchIconWrapper,
+    StyledInputBase
+} from "./headerStyle";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
-import { toggleSideBarAC } from "../../store/sideBar/slice";
+
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import { toggleThemeAC } from "../../store/changeTheme/themeSlice";
+import { ThemeModeEnum, toggleThemeAC } from "../../store/theme/themeSlice";
 import { useAppSelector } from "../../hooks/useAppSelector";
+import SearchIcon from "@mui/icons-material/Search";
 
 export const Header = () => {
     const dispatch = useAppDispatch();
-    const changeColor = useAppSelector(state => state.changeTheme);
-    console.log(changeColor.mode);
-
-    const toggle = () => {
-        dispatch(toggleSideBarAC());
-    };
+    const mode = useAppSelector(state => state.theme.mode);
 
     const handlechangeColor = () => {
         dispatch(toggleThemeAC());
@@ -22,17 +26,24 @@ export const Header = () => {
     return (
         <AppBarForMen>
             <ToolbarForMen>
-                <IconButton onClick={toggle}>
-                    <MenuIcon />
-                </IconButton>
+                <Search>
+                    <SearchIconWrapper>
+                        <SearchIcon />
+                    </SearchIconWrapper>
+                    <StyledInputBase placeholder="Search…" inputProps={{ "aria-label": "search" }} />
+                </Search>
+
                 <PartUtils>
                     <FormGroup>
-                        {<ThemeSwitch sx={{ m: 1 }} defaultChecked size="small" onClick={handlechangeColor} />}
+                        {<ThemeSwitch checked={mode === ThemeModeEnum.DARK} onClick={handlechangeColor} />}
                     </FormGroup>
                     <IconButton>
                         <Badge badgeContent={4} color="secondary">
                             <AddShoppingCartIcon />
                         </Badge>
+                    </IconButton>
+                    <IconButton>
+                        <AccountCircle />
                     </IconButton>
                 </PartUtils>
             </ToolbarForMen>

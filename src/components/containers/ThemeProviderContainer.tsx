@@ -1,20 +1,13 @@
-import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
-import { theme as defaultTheme } from "../../constants/theme";
-import { FC, PropsWithChildren, useMemo } from "react";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { darkTheme, lightTheme } from "../../constants/theme";
+import { FC, PropsWithChildren } from "react";
 import { useAppSelector } from "../../hooks/useAppSelector";
 
 export const ThemeProviderContainer: FC<PropsWithChildren> = ({ children }) => {
-    const mode = useAppSelector(state => state.changeTheme.mode);
-    const theme = useMemo(() => {
-        return createTheme({
-            ...defaultTheme,
-            palette: {
-                mode
-            }
-        });
-    }, [mode]);
+    const mode = useAppSelector(state => state.theme.mode);
+
     return (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={mode === "dark" ? darkTheme : lightTheme}>
             <CssBaseline />
             {children}
         </ThemeProvider>

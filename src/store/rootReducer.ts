@@ -1,8 +1,8 @@
 import { combineReducers } from "@reduxjs/toolkit";
 import sideBarReducer from "./sideBar/slice";
-import changeThemeReducer from "./changeTheme/themeSlice";
+import themeReducer from "./theme/themeSlice";
 
 export const rootReducer = combineReducers({
     sideBar: sideBarReducer,
-    changeTheme: changeThemeReducer
+    theme: themeReducer
 });

@@ -14,7 +14,7 @@ export const initialState: IThemeState = {
 };
 
 export const themeSlice = createSlice({
-    name: "changeTheme",
+    name: "theme",
     initialState,
     reducers: {
         toggleThemeAC: state => {

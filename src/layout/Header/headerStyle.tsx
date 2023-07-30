@@ -1,21 +1,24 @@
-import { AppBar, Switch, Toolbar, styled } from "@mui/material";
+import { AppBar, Switch, Toolbar, styled, InputBase, alpha } from "@mui/material";
 
 export const AppBarForMen = styled(AppBar)({
-    position: "sticky"
-});
-export const ToolbarForMen = styled(Toolbar)<{
-    open?: boolean;
-}>(({ open }) => ({
     position: "sticky",
+    gridArea: "header",
     display: "flex",
-    justifyContent: "space-between",
-    ...(open && {
-        background: "#635836"
-    })
+    justifyContent: "center",
+    flexDirection: "row",
+    alignItems: "center"
+});
+export const ToolbarForMen = styled(Toolbar)(({ theme }) => ({
+    position: "sticky",
+    width: "100%",
+    [theme.breakpoints.down("sm")]: {
+        justifyContent: "flex-end"
+    }
 }));
 
 export const PartUtils = styled("div")({
-    display: "flex"
+    display: "flex",
+    alignItems: "center"
 });
 
 export const ThemeSwitch = styled(Switch)(({ theme }) => ({
@@ -62,5 +65,40 @@ export const ThemeSwitch = styled(Switch)(({ theme }) => ({
         opacity: 1,
         backgroundColor: theme.palette.mode === "dark" ? "#8796A5" : "#aab4be",
         borderRadius: 20 / 2
+    }
+}));
+export const Search = styled("div")(({ theme }) => ({
+    position: "relative",
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    flexGrow: 1,
+    margin: "0 25%",
+    "&:hover": {
+        backgroundColor: alpha(theme.palette.common.white, 0.25)
+    },
+    [theme.breakpoints.down("sm")]: {
+        display: "none"
+    }
+}));
+
+export const SearchIconWrapper = styled("div")(({ theme }) => ({
+    padding: theme.spacing(0, 2),
+    height: "100%",
+    position: "absolute",
+    pointerEvents: "none",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
+}));
+
+export const StyledInputBase = styled(InputBase)(({ theme }) => ({
+    color: "inherit",
+    width: "100%",
+    "& .MuiInputBase-input": {
+        padding: theme.spacing(1, 1, 1, 0),
+        // vertical padding + font size from searchIcon
+        paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+        transition: theme.transitions.create("width"),
+        width: "100%"
     }
 }));

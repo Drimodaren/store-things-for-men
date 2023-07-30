@@ -5,6 +5,7 @@ export const ContainerMain = styled("main")({
     display: "flex",
     flex: "1",
     justifyContent: "center",
-    padding: "20px 50px",
-    textAlign: "justify"
+    padding: "20px 30px",
+    textAlign: "justify",
+    gridArea: "main"
 });
