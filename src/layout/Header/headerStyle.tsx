@@ -1,13 +1,14 @@
 import { AppBar, Switch, Toolbar, styled, InputBase, alpha } from "@mui/material";
 
-export const AppBarForMen = styled(AppBar)({
+export const AppBarForMen = styled(AppBar)(({ theme }) => ({
     position: "sticky",
     gridArea: "header",
     display: "flex",
     justifyContent: "center",
     flexDirection: "row",
-    alignItems: "center"
-});
+    alignItems: "center",
+    backgroundColor: theme.palette.primary.main
+}));
 export const ToolbarForMen = styled(Toolbar)(({ theme }) => ({
     position: "sticky",
     width: "100%",
