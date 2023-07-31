@@ -8,7 +8,7 @@ import {
     Search,
     SearchIconWrapper,
     StyledInputBase
-} from "./headerStyle";
+} from "./style";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";

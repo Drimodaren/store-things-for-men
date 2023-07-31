@@ -6,9 +6,6 @@ const darkPalette = createTheme({
         primary: {
             main: "#56a0d3"
         }
-    },
-    typography: {
-        h1: {}
     }
 });
 
@@ -18,9 +15,6 @@ const lightPalette = createTheme({
         primary: {
             main: "#564163"
         }
-    },
-    typography: {
-        h1: {}
     }
 });
 export const darkTheme = responsiveFontSizes(darkPalette);
