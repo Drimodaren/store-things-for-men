@@ -1,20 +1,21 @@
-import { Button, styled } from "@mui/material";
 import { StoreProvider } from "./StoreProvider";
 import { ThemeProviderContainer } from "./ThemeProviderContainer";
+import { Header } from "../../layout/Header";
+import { LeftSideBar } from "../../layout/SideBar";
+import { Main } from "../../layout/Main";
+import { Footer } from "../../layout/Footer";
+import { AppBox } from "./style";
 
-export const StyledButton = styled(Button)<{ redNumber?: number }>(({ theme, redNumber, color }) => {
-    console.log(theme);
-    console.log(color);
-
-    return {
-        // backgroundColor: theme.palette.primary.light
-    };
-});
 export const App = () => {
     return (
         <StoreProvider>
             <ThemeProviderContainer>
-                <StyledButton color="warning">Button</StyledButton>
+                <AppBox>
+                    <Header />
+                    <Main />
+                    <LeftSideBar />
+                    <Footer />
+                </AppBox>
             </ThemeProviderContainer>
         </StoreProvider>
     );
