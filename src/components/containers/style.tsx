@@ -1,4 +1,4 @@
-import { styled, Box } from "@mui/material";
+import { Box, styled } from "@mui/material";
 
 export const AppBox = styled(Box)(({ theme }) => ({
     height: "100vh",

@@ -1,20 +1,21 @@
-import { FormGroup, IconButton, Badge } from "@mui/material";
 import AccountCircle from "@mui/icons-material/AccountCircle";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import SearchIcon from "@mui/icons-material/Search";
+import { Badge, FormGroup, IconButton } from "@mui/material";
+
+import { ThemeModeEnum, toggleThemeAC } from "../../store/theme/themeSlice";
+
+import { useAppDispatch } from "../../hooks/useAppDispatch";
+import { useAppSelector } from "../../hooks/useAppSelector";
 import {
     AppBarForMen,
     PartUtils,
-    ThemeSwitch,
-    ToolbarForMen,
     Search,
     SearchIconWrapper,
-    StyledInputBase
+    StyledInputBase,
+    ThemeSwitch,
+    ToolbarForMen
 } from "./style";
-import { useAppDispatch } from "../../hooks/useAppDispatch";
-
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import { ThemeModeEnum, toggleThemeAC } from "../../store/theme/themeSlice";
-import { useAppSelector } from "../../hooks/useAppSelector";
-import SearchIcon from "@mui/icons-material/Search";
 
 export const Header = () => {
     const dispatch = useAppDispatch();

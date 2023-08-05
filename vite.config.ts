@@ -5,10 +5,10 @@ import eslintPlugin from "vite-plugin-eslint";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [tsconfigPaths(), react()],
+    plugins: [tsconfigPaths(), react(), eslintPlugin({ failOnError: false, fix: true })],
     server: {
         port: 3000,
-        open: true,
-    },
+        open: true
+    }
 });
 //eslintPlugin({ failOnError: false, fix: true })
