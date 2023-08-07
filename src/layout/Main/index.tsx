@@ -1,4 +1,5 @@
 import { Typography } from "@mui/material";
+
 import { ContainerMain } from "./style";
 
 export const Main = () => {

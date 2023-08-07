@@ -1,13 +1,12 @@
-import { AsideForMen, ButtonAside } from "./style";
-import SearchIcon from "@mui/icons-material/Search";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import SailingIcon from "@mui/icons-material/Sailing";
-
 import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-
+import SailingIcon from "@mui/icons-material/Sailing";
+import SearchIcon from "@mui/icons-material/Search";
 import TwoWheelerIcon from "@mui/icons-material/TwoWheeler";
 import { Typography } from "@mui/material";
+
+import { AsideForMen, ButtonAside } from "./style";
 
 export const LeftSideBar = () => {
     // const matches = useMediaQuery((theme: Theme) => theme.breakpoints.up("sm"));

@@ -1,7 +1,7 @@
-import { IconButton, Link, Typography } from "@mui/material";
-import { ContainerFooter, ToolbarFooter } from "./style";
-
 import GitHubIcon from "@mui/icons-material/GitHub";
+import { IconButton, Link, Typography } from "@mui/material";
+
+import { ContainerFooter, ToolbarFooter } from "./style";
 
 export const Footer = () => {
     return (

@@ -1,4 +1,4 @@
-import { AppBar, Switch, Toolbar, styled, InputBase, alpha } from "@mui/material";
+import { AppBar, InputBase, Switch, Toolbar, alpha, styled } from "@mui/material";
 
 export const AppBarForMen = styled(AppBar)(({ theme }) => ({
     position: "sticky",

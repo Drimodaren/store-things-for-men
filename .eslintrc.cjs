@@ -20,6 +20,12 @@ module.exports = {
         tsconfigRootDir: __dirname
     },
     plugins: ["react-refresh"],
+    settings: {
+        "import/extensions": [".js", ".jsx", ".tsx", ".ts"],
+        "import/resolver": {
+            typescript: {} // this loads <rootdir>/tsconfig.json to eslint
+        }
+    },
     rules: {
         "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
         "@typescript-eslint/no-non-null-assertion": "off"
