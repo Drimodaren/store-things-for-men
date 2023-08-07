@@ -1,12 +1,10 @@
 import { Typography } from "@mui/material";
-import axios from "axios";
-import { useEffect } from "react";
-
-import { getProductArray } from "../../store/products/selectors";
-import { loadProducts } from "../../store/products/slice";
-
-import { useAppSelector } from "../../hooks/useAppSelector";
 import { ContainerMain } from "./style";
+import axios from "axios";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import { useEffect } from "react";
+import { loadProducts } from "../../store/products/slice";
+import { getProductArray } from "../../store/products/selectors";
 
 export const Main = () => {
     const dispatch = useAppDispatch();
